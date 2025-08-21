@@ -1,0 +1,17 @@
+Biorepository Data Validation Report
+Date: 2025-08-21 13:34
+
+Input files:
+ - Import: /home/aaron/Desktop/BioVal/data/NDEGTest_import_file.csv
+ - Reference: /home/aaron/Desktop/BioVal/data/NDEGTest_ref_file.csv
+
+Summary:
+ - Number of import rows processed: 1
+ - Number of new pat_ids added: 0
+ - Number of duplicate positions found: 0
+ - Assigned record_id range: 3 to 3
+
+Warnings / Errors:
+ - None
+
+Validation completed successfully!

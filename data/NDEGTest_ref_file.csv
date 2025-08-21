@@ -1,0 +1,8 @@
+record_id,redcap_event_name,redcap_repeat_instrument,redcap_repeat_instance,pat_id,visit_date,study,study_visit,material,pos,posval,tube_id,box_id,freezer,rack,box,fibro_passage,einfrierdatum_minus80,aufgetaut,volumen,kommentar,zellzahl_ampulle,verschickt_am,verschickt_empfaenger,verschickt_projekt,reserviert_am,reserviert_fuer,extern_prozessiert,visit_time,freeze_time,nuechtern,abholort,probenabnahme,aufarbeitung,visit_nr,neurolabor_nummer,pat_nr_study,accession_nr,dna_versandtyp,cohort,beschriftung,bereits_erkrankt,fibro_kontrolle,extern_verwendbar,ips_zellen,ips_zellen_char,fibro_mutation,fibro_abnahmeort,prep_time,pbmc_roehrchen,anzahl_roehrchen,zmf_cmv_status,zmf_blutmenge,zmf_gesamtzellzahl,zmf_plasma_ampulle,zmf_plasma_lagerort,zmf_einfrierdatum_n2,biorepository_complete
+1,screening_arm_1,,,123 456 789,2023-01-11,,,Urin,A1,,2345,1,1,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0
+1,baseline_arm_1,,,123 456 789,2023-01-11,,,Urin,A7,,23456,1,1,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0
+2,screening_arm_1,,,111 111 111,2023-01-11,,,Serum,A2,,12234,1,1,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0
+2,baseline_arm_1,,,111 111 111,2023-01-11,,,Serum,A3,,23333,1,1,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0
+2,follow_up_arm_1,,1,111 111 111,2023-01-11,,,Serum,A4,,45677,1,1,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0
+3,screening_arm_1,,,124 123 4ll,2023-01-11,,,EDTA Plasma,A5,,1223456,1,1,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0
+3,follow_up_arm_1,,1,124 123 4ll,2023-01-11,,,EDTA Plasma,A6,,56454,1,1,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0
