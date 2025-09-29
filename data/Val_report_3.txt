@@ -1,17 +1,18 @@
 Biorepository Data Validation Report
-Date: 2025-08-21 13:34
+Date: 2025-09-29 15:15
+==================================================
 
 Input files:
- - Import: /home/aaron/Desktop/BioVal/data/NDEGTest_import_file.csv
+ - Import: /home/aaron/Desktop/BioVal/data/NDEGTest_import_file_double_position.csv
  - Reference: /home/aaron/Desktop/BioVal/data/NDEGTest_ref_file.csv
 
 Summary:
- - Number of import rows processed: 1
- - Number of new pat_ids added: 0
- - Number of duplicate positions found: 0
- - Assigned record_id range: 3 to 3
+ - Number of import rows processed: 2
 
-Warnings / Errors:
- - None
+Errors / Warnings:
+ - Import vs Reference – 2 duplicate position error(s):
+Row 2: Position ('1', '1', '1', 'A1') is already occupied in reference data.
+Row 3: Position ('1', '1', '1', 'A2') is already occupied in reference data.
 
-Validation completed successfully!
+Recommendation:
+❌ No upload. Errors must be fixed first.
