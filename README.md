@@ -33,11 +33,13 @@ After the validation ran BioVal gives a feedback with a small txt file showing a
 
 #### Workflow 
 
-1. Fill in the required variables in the template file (colorcoded)
-2. Download the ref file from RedCap repository (here create build in solution)
+1. Download the ref file from RedCap repository (here create build in solution)
+   atm. In REDCap go to Data Export. Choose B Selected instruments and/or events (all records) - use all events. Download the csv file. This file will be the reference file.
+2. Fill in the required variables in the template file (colorcoded)
 3. Run validation either with GUI or python
 4. Evaluation of the error file
 5. In case of positive evaluation, upload on RedCap. In case of negative evaluation BioVal will pinpoint on the specific row in the csv files where problems have occured, such that they should be easy to fix
+
 
 
 
