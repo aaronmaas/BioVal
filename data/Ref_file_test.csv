@@ -1,0 +1,8 @@
+accession_nr,biomaterial,biorepository_complete,box,box_id,cell_number,cohort,comment,date_received,extern_processed,extraction,extraction_time,fasting,fibro_passage,freeze_date,freeze_time,freezer,lab_id,processed,processing_time,rack,redcap_event_name,redcap_repeat_instance,redcap_repeat_instrument,reserved_date,reserved_for,sent_date,sent_project,study,study_id,study_visit,thaw_date,tube_id,tube_pos,virus_diag,volume
+,,0,2,200,,,,,,,,,,,,1,,,,1,screening_arm_1,,,,,,,,1,,,2345,,,
+,,0,1,1,,,,,,,,,,,,1,,,,1,baseline_arm_1,,,,,,,,1,,,23456,,,
+,,0,2,200,,,,,,,,,,,,1,,,,1,screening_arm_1,,,,,,,,2,,,2345,,,
+,,0,1,1,,,,,,,,,,,,1,,,,1,baseline_arm_1,,,,,,,,2,,,23333,,,
+,,0,1,1,,,,,,,,,,,,1,,,,1,follow_up_arm_1,1,,,,,,,2,,,45677,,,
+,,0,1,1,,,,,,,,,,,,1,,,,1,screening_arm_1,,,,,,,,3,,,1223456,,,
+,,0,1,1,,,,,,,,,,,,1,,,,1,follow_up_arm_1,1,,,,,,,3,,,56454,,,

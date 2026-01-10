@@ -1,0 +1,16 @@
+Biorepository Data Validation Report
+Date: 2025-09-30 11:35
+==================================================
+
+Input files:
+ - Import: /home/aaron/Desktop/BioVal/data/NDEGTest_import_file.csv
+ - Reference: /home/aaron/Desktop/BioVal/data/NDEGTest_ref_file.csv
+
+Summary:
+ - Number of import rows processed: 1
+
+Errors / Warnings:
+ - None
+
+Recommendation:
+✅ Upload safe.

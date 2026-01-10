@@ -14,5 +14,10 @@ Errors / Warnings:
 Row 2: Position ('1', '1', '1', 'A1') is already occupied in reference data.
 Row 3: Position ('1', '1', '1', 'A2') is already occupied in reference data.
 
+Sample ID mitausgeben. 
+Liste der freien Stellen. 
+
+
 Recommendation:
 ❌ No upload. Errors must be fixed first.
+
