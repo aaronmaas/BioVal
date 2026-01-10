@@ -1,5 +1,5 @@
 Biorepository Data Validation Report
-Date: 2026-01-10 16:22
+Date: 2026-01-10 20:39
 ==================================================
 
 Input files:
@@ -12,5 +12,6 @@ Summary:
 Errors / Warnings:
  - None
 
+Lab Id assignment : ['Next available lab patient ID: 00004', 'Assigned lab patient ID 00004 to study ID 111-111-111']
 Recommendation:
 No recommendation provided.
