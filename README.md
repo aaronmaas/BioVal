@@ -5,11 +5,16 @@ The code runs locally and is fully python based and prevents the loss of informa
 the validation tasks. 
 
 ## Dependencies
- - csv (inbuild python 3.9) 
+ - csv (inbuild python 3.9)
+ - os (inbuild python 3.9)
+ - subprocess (inbuild python 3.9)
+ - collections (inbuild python 3.9)
+ - re (inbuild python 3.9)
  - tkinter (8.6.11 Conda)
  - sys (3.9.12 Conda) 
  - regex (2022.3.15 Conda)
  - Pillow (9.0.1 - PIP)
+ - pyinstaller (6.18.0 - PIP)
 
 ## How to use BioVal? 
 
