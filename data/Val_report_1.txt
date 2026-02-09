@@ -1,17 +1,28 @@
 Biorepository Data Validation Report
-Date: 2025-07-11 14:35
+Date: 2026-02-09 16:24
+==================================================
 
 Input files:
- - Import: /home/aaron/Desktop/BioVal/data/NDEGTest_import_file.csv
- - Reference: /home/aaron/Desktop/BioVal/data/NDEGTest_ref_file.csv
+ - Import: /home/aaron/Desktop/BioVal/templates/RDRegistryDevelopment_ImportTemplate_2026-02-07.csv
+ - Reference: /home/aaron/Desktop/BioVal/data/Ref_file_test.csv
 
 Summary:
  - Number of import rows processed: 1
- - Number of new pat_ids added: 0
- - Number of duplicate positions found: 0
- - Assigned record_id range: 3 to 3
 
-Warnings / Errors:
- - None
+Errors / Warnings Inputfile:
+ - ["Row 2: Missing value in 'tube_id'", "Row 2: Missing value in 'box_id'", "Row 2: Unknown or unsupported material '3'"]
 
-Validation completed successfully!
+Errors / Warnings Referencefile:
+ - ["Row 2: Missing value in 'biomaterial'", "Row 2: Missing value in 'tube_pos'", "Row 2: Missing value in 'tube_status'", "Row 2: Unknown or unsupported material ''"]
+ - ["Row 3: Missing value in 'lab_id'", "Row 3: Missing value in 'biomaterial'", "Row 3: Missing value in 'tube_pos'", "Row 3: Missing value in 'tube_status'", "Row 3: Unknown or unsupported material ''"]
+ - ["Row 4: Missing value in 'tube_id'", "Row 4: Missing value in 'box_id'", "Row 4: Unknown or unsupported material '9'"]
+ - ["Row 5: Missing value in 'biomaterial'", "Row 5: Missing value in 'tube_pos'", "Row 5: Missing value in 'tube_id'", "Row 5: Missing value in 'box_id'", "Row 5: Missing value in 'freezer'", "Row 5: Missing value in 'rack'", "Row 5: Missing value in 'box'", "Row 5: Missing value in 'tube_status'", "Row 5: Unknown or unsupported material ''"]
+ - ["Row 6: Missing value in 'lab_id'", "Row 6: Missing value in 'biomaterial'", "Row 6: Missing value in 'tube_pos'", "Row 6: Missing value in 'tube_id'", "Row 6: Missing value in 'box_id'", "Row 6: Missing value in 'freezer'", "Row 6: Missing value in 'rack'", "Row 6: Missing value in 'box'", "Row 6: Missing value in 'tube_status'", "Row 6: Unknown or unsupported material ''"]
+ - ["Row 7: Missing value in 'tube_id'", "Row 7: Missing value in 'box_id'", "Row 7: Unknown or unsupported material '1'"]
+ - ["Row 8: Missing value in 'tube_id'", "Row 8: Missing value in 'box_id'", "Row 8: Unknown or unsupported material '5'"]
+ - ["Row 9: Missing value in 'tube_id'", "Row 9: Missing value in 'box_id'", "Row 9: Unknown or unsupported material '3'"]
+
+Lab Id assignment - None
+
+Recommendation:
+No recommendation provided.

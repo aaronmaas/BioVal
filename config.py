@@ -2,8 +2,9 @@
 import re
 #Define allowed values and required fields
 REQUIRED_FIELDS = [
-    "study_id", "lab_id", "redcap_event_name", "biomaterial", "tube_pos",
-    "tube_id", "box_id", "freezer", "rack", "box", "tube_status"
+    "study_id", "study", "lab_id", "redcap_event_name", "sampling_date", "biomaterial", "tube_pos",
+    "redcap_repeat_instrument", "redcap_repeat_instance", 
+    "tube_id", "box_id", "freezer", "rack", "box", "tube_status", 
 ]
 
 #Valid Biomaterial in aliquots

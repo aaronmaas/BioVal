@@ -36,7 +36,7 @@ def validate_row(row, index):
     """
     errors = []
 
-    # (1) Required fields   #das ist aktuell doppelt
+    # (1) Required fields
     for field in REQUIRED_FIELDS:
         if row.get(field, "").strip() == "":
             errors.append(f"Row {index}: Missing value in '{field}'")
@@ -103,12 +103,11 @@ def validate_file(path, label):
     print(f" Checking {label}: {path}")
     headers, rows = read_csv(path)
     
-    # Check for required column headers
+    # Check for required column headers - so in the document not on the 
     structure_errors = check_structure(headers)
     if structure_errors:
         raise ValueError(f"Missing required columns in {label}: {structure_errors}")
     #errors hier definieren und dann mitgeben anstatt den Validation check for required columns doppelt zu machen
-    # Validate each row; could be done vectorized probably even faster but for now it is ok!
     for i, row in enumerate(rows, start=2):
         validate_row(row, i)  # will raise immediately if invalid
 

@@ -142,7 +142,19 @@ main_frame.pack(fill="both", expand=True)
 
 # --- Optional Image ---
 try:
-    img = Image.open("logo.jpeg")  # <-- Dein Bildpfad
+    if getattr(sys, "frozen", False):
+    	base_path = sys._MEIPASS
+    else:
+    	base_path = os.path.dirname(os.path.abspath(__file__))
+    logo_path = os.path.join(base_path,"images", "logo.jpeg")
+    print("DEBUG logo path:", logo_path)
+    print("DEBUG images dir exists:", os.path.exists(os.path.join(base_path, "images")))
+    print("DEBUG logo exists:", os.path.exists(os.path.join(base_path, "images", "logo.jpeg")))
+    print("DEBUG base_path contents:", os.listdir(base_path))
+
+    img = Image.open(logo_path)
+
+    #img = Image.open(os.path.join(base_path, "logo.jpeg"))
     img = img.resize((250, 250))
     photo = ImageTk.PhotoImage(img)
     logo_label = ttk.Label(main_frame, image=photo)
