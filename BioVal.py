@@ -8,7 +8,7 @@ from PIL import Image, ImageTk  # Pillow muss installiert sein: pip install pill
 import os
 import sys
 import subprocess
-from config import API_URL, STORAGE_RULES
+from config import API_URL, STORAGE_RULES, STUDY_ID_PATTERN
 import utils as u
 import positions as p
 import validation as v

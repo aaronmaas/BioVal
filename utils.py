@@ -1,4 +1,7 @@
 import csv
+from config import STUDY_ID_PATTERN
+from datetime import datetime
+
 
 def read_csv(path):
     """
@@ -56,7 +59,7 @@ def write_report(filename, import_file, reference_file, labid_messages =None, im
         # Lab Id assignment
         f.write("Lab Id assignment")
         if labid_messages: 
-            for msg in id_assignment_messages:
+            for msg in labid_messages:
                 f.write(f" - {msg}\n")
         else:
             f.write(" - None\n")

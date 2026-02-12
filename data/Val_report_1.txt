@@ -1,28 +1,19 @@
 Biorepository Data Validation Report
-Date: 2026-02-12 16:29
+Date: 2026-02-12 18:22
 ==================================================
 
 Input files:
- - Import: /home/aaron/Desktop/BioVal/templates/RDRegistryDevelopment_ImportTemplate_2026-02-07.csv
+ - Import: /home/aaron/Desktop/BioVal/data/RDRegistryDevelopment_ImportTemplate_2026-02-07.csv
  - Reference: /home/aaron/Desktop/BioVal/data/Ref_file_test.csv
 
 Summary:
- - Number of import rows processed: 1
+ - Number of import rows processed: 2
 
-Errors / Warnings Inputfile:
- - ["Row 2: Missing value in 'tube_id'", "Row 2: Missing value in 'box_id'", "Row 2: Unknown or unsupported material '3'"]
+Errors / Warnings:
+ - None
 
-Errors / Warnings Referencefile:
- - ["Row 2: Missing value in 'study'", "Row 2: Missing value in 'sampling_date'", "Row 2: Missing value in 'biomaterial'", "Row 2: Missing value in 'tube_pos'", "Row 2: Missing value in 'redcap_repeat_instrument'", "Row 2: Missing value in 'redcap_repeat_instance'", "Row 2: Missing value in 'tube_status'", 'Row 2: Invalid Redcap Event name must be participant_regist_arm_1.', 'Row 2: Invalid Redcap Repeated instrument: must be biorepository.', "Row 2: Unknown or unsupported material ''"]
- - ["Row 3: Missing value in 'study'", "Row 3: Missing value in 'lab_id'", "Row 3: Missing value in 'sampling_date'", "Row 3: Missing value in 'biomaterial'", "Row 3: Missing value in 'tube_pos'", "Row 3: Missing value in 'redcap_repeat_instrument'", "Row 3: Missing value in 'redcap_repeat_instance'", "Row 3: Missing value in 'tube_status'", 'Row 3: Invalid Redcap Event name must be participant_regist_arm_1.', 'Row 3: Invalid Redcap Repeated instrument: must be biorepository.', "Row 3: Unknown or unsupported material ''"]
- - ["Row 4: Missing value in 'study'", "Row 4: Missing value in 'sampling_date'", "Row 4: Missing value in 'redcap_repeat_instrument'", "Row 4: Missing value in 'redcap_repeat_instance'", "Row 4: Missing value in 'tube_id'", "Row 4: Missing value in 'box_id'", 'Row 4: Invalid Redcap Event name must be participant_regist_arm_1.', 'Row 4: Invalid Redcap Repeated instrument: must be biorepository.', "Row 4: Unknown or unsupported material '9'"]
- - ["Row 5: Missing value in 'study'", "Row 5: Missing value in 'sampling_date'", "Row 5: Missing value in 'biomaterial'", "Row 5: Missing value in 'tube_pos'", "Row 5: Missing value in 'redcap_repeat_instrument'", "Row 5: Missing value in 'redcap_repeat_instance'", "Row 5: Missing value in 'tube_id'", "Row 5: Missing value in 'box_id'", "Row 5: Missing value in 'freezer'", "Row 5: Missing value in 'rack'", "Row 5: Missing value in 'box'", "Row 5: Missing value in 'tube_status'", 'Row 5: Invalid Redcap Event name must be participant_regist_arm_1.', 'Row 5: Invalid Redcap Repeated instrument: must be biorepository.', "Row 5: Unknown or unsupported material ''"]
- - ["Row 6: Missing value in 'study'", "Row 6: Missing value in 'lab_id'", "Row 6: Missing value in 'sampling_date'", "Row 6: Missing value in 'biomaterial'", "Row 6: Missing value in 'tube_pos'", "Row 6: Missing value in 'redcap_repeat_instrument'", "Row 6: Missing value in 'redcap_repeat_instance'", "Row 6: Missing value in 'tube_id'", "Row 6: Missing value in 'box_id'", "Row 6: Missing value in 'freezer'", "Row 6: Missing value in 'rack'", "Row 6: Missing value in 'box'", "Row 6: Missing value in 'tube_status'", 'Row 6: Invalid Redcap Event name must be participant_regist_arm_1.', 'Row 6: Invalid Redcap Repeated instrument: must be biorepository.', "Row 6: Unknown or unsupported material ''"]
- - ["Row 7: Missing value in 'study'", "Row 7: Missing value in 'sampling_date'", "Row 7: Missing value in 'redcap_repeat_instrument'", "Row 7: Missing value in 'redcap_repeat_instance'", "Row 7: Missing value in 'tube_id'", "Row 7: Missing value in 'box_id'", 'Row 7: Invalid Redcap Event name must be participant_regist_arm_1.', 'Row 7: Invalid Redcap Repeated instrument: must be biorepository.', "Row 7: Unknown or unsupported material '1'"]
- - ["Row 8: Missing value in 'study'", "Row 8: Missing value in 'sampling_date'", "Row 8: Missing value in 'redcap_repeat_instrument'", "Row 8: Missing value in 'redcap_repeat_instance'", "Row 8: Missing value in 'tube_id'", "Row 8: Missing value in 'box_id'", 'Row 8: Invalid Redcap Event name must be participant_regist_arm_1.', 'Row 8: Invalid Redcap Repeated instrument: must be biorepository.', "Row 8: Unknown or unsupported material '5'"]
- - ["Row 9: Missing value in 'study'", "Row 9: Missing value in 'sampling_date'", "Row 9: Missing value in 'redcap_repeat_instrument'", "Row 9: Missing value in 'redcap_repeat_instance'", "Row 9: Missing value in 'tube_id'", "Row 9: Missing value in 'box_id'", 'Row 9: Invalid Redcap Event name must be participant_regist_arm_1.', 'Row 9: Invalid Redcap Repeated instrument: must be biorepository.', "Row 9: Unknown or unsupported material '3'"]
-
-Lab Id assignment - None
+Lab Id assignment - Next available lab patient ID: 00001
+ - Assigned lab patient ID 00001 to study ID 111-222-789
 
 Recommendation:
 No recommendation provided.

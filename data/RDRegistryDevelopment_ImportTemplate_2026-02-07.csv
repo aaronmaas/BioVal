@@ -1,3 +1,3 @@
-study_id,redcap_event_name,redcap_repeat_instrument,redcap_repeat_instance,welcome_complete,lab_id,study,sampling_date,biomaterial,volume,cell_number,tube_id,box_id,tube_pos,box,rack,freezer,tube_status,fibro_passage,sent_date,sent_project,reserved_date,reserved_for,comment,biorepository_complete
-111-222-789,participant_regist_arm_1,biorepository,1,,1,POLR3A,07/02/26,Urine,,,1234,1234,A2,1,1,1,1,,,,,,,
-111-222-789,participant_regist_arm_1,biorepository,2,,1,POLR3A,07/02/26,Urine,,,1234,1234,A3,1,1,1,1,,,,,,,
+biomaterial,biorepository_complete,box,box_id,cell_number,comment,fibro_passage,freezer,lab_id,rack,redcap_event_name,redcap_repeat_instance,redcap_repeat_instrument,reserved_date,reserved_for,sampling_date,sent_date,sent_project,study,study_id,tube_id,tube_pos,tube_status,volume,welcome_complete
+Urine,,1,1234,,,,1,00001,1,participant_regist_arm_1,1,biorepository,,,07/02/26,,,POLR3A,111-222-789,1234,A2,1,,
+Urine,,1,1234,,,,1,00001,1,participant_regist_arm_1,2,biorepository,,,07/02/26,,,POLR3A,111-222-789,1234,A3,1,,

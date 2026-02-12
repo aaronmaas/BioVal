@@ -1,7 +1,7 @@
 import requests
 
 
-def download_reference_from_redcap(api_url, api_token, form_name="biorepository"):
+def download_reference_from_redcap(api_url, api_token,report_id = "27", form_name="biorepository"):
     """
     Helper function from GUI. Downloads reference data directly from REDCap via API.
 
@@ -16,15 +16,16 @@ def download_reference_from_redcap(api_url, api_token, form_name="biorepository"
 
     data = {
         'token': api_token,
-        'content': 'record',
+        'content': 'report',
         'format': 'json',
-        'type': 'flat',
-        'forms[0]': form_name,
+        'report_id': report_id,
+        'csvDelimiter': '',
         'rawOrLabel': 'raw',
         'rawOrLabelHeaders': 'raw',
-        'exportSurveyFields': 'true',
-        'exportDataAccessGroups': 'true'
+        'exportCheckboxLabel': 'false',
+        'returnFormat': 'json'
     }
+        
     #EAFP style
     try:
         response = requests.post(api_url, data=data, timeout=20)

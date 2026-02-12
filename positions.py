@@ -1,4 +1,4 @@
-from config import STORAGE_RULES, FREEZER_ORDER
+from config import STORAGE_RULES, FREEZER_ORDER, STUDY_ID_PATTERN
 from itertools import product
 import csv
 from collections import defaultdict

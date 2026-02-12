@@ -1,3 +1,0 @@
-study_id,redcap_event_name,redcap_repeat_instrument,redcap_repeat_instance,lab_id,cohort,study,study_visit,fasting,extraction_time,extraction,processing_time,processed,extern_processed,date_received,biomaterial,volume,cell_number,tube_pos,tube_id,box_id,box,rack,freezer,freeze_date,freeze_time,fibro_passage,virus_diag,thaw_date,sent_date,sent_project,reserved_date,reserved_for,accession_nr,comment,biorepository_complete,,,,,,,,,,,,,,,,,,,,
-1,screening_arm_1,,,124 123 4ll,,,,,,,,,,,CSF,,,A1,2345,,1,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0
-2,screening_arm_1,,,111 111 111,,,,,,,,,,,Serum,,,A2,12234,,1,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0
