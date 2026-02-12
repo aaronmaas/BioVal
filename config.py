@@ -21,10 +21,7 @@ CELLS = ["Fibroblasten", "PBMC"]
 #Study_id pattern is in the order XXX-XXX-XXX with x being a natural number
 STUDY_ID_PATTERN = re.compile(r"^\d{3}-\d{3}-\d{3}$") #d means here digit betwenn 0-9
 
-#Valid redcap events/ #Redcap event name stellvertretend für Arm der Studie
-VALID_EVENTS = ["baseline_arm_1", "screening_arm_1", "follow_up_arm_1"]
-#Das muss noch verändert werden
-
+#Valid tube status por favor? 
 VALID_tube_status = [""]
 
 #Allowed matrices (positions) per biomaterial
@@ -84,6 +81,8 @@ FREEZER_ORDER = {
     "4deg": 4,
     "nitrogen": 5,
 }
+
+
 
 
 

@@ -63,7 +63,7 @@ def run_validation():
         # 1. Download reference data
         # ===============================
         reference_rows = download_reference_from_redcap(API_URL, API_TOKEN)
-        ref_path = "/home/aaron/Desktop/BioVal/data/Ref_file_test.csv"
+        ref_path = "/home/aaron/Desktop/BioVal/data/Ref_file_test.csv" ###
         u.save_data_as_csv(reference_rows, ref_path)
 
         # ===============================

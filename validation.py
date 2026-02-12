@@ -63,13 +63,13 @@ def validate_row(row, index):
     elif biomaterial in DNA:
         if tube_pos not in VALID_POS_DNA_CELLS_PBMC:
             errors.append(f"Row {index}: Invalid tube-pos '{tube_pos}' for DNA (must be A1–J10)")
-        if freezer != "4deg":
+        if freezer != "4": #here I need to be careful because this is exactly the problem
             errors.append(f"Row {index}: DNA must be stored in 4-degree freezer.")
 
     elif biomaterial in CELLS:
         if tube_pos not in VALID_POS_DNA_CELLS_PBMC:
             errors.append(f"Row {index}: Invalid tube-pos '{tube_pos}' for {biomaterial} (must be A1–J10)")
-        if freezer != "nitrogen":
+        if freezer != "5": #here I need to be careful because this is exactly the problem
             errors.append(f"Row {index}: {biomaterial} must be stored in nitrogen tank.")
     #Eception
     else:

@@ -135,14 +135,11 @@ def save_positions_to_csv(path, positions):
     """
     with open(path, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
-        writer.writerow(["freezer", "rack", "box", "pos"])
+        writer.writerow(["pos", "box", "rack", "freezer"])
         
         for freezer, rack, box, pos in positions:
-            
-            freezer_code = FREEZER_ORDER[freezer]
-
-            
-            writer.writerow([pos, box, rack, freezer_code])
+            freezer_code = FREEZER_ORDER_BACK[freezer] #Umwandlung von 4deg -> 4 von nitrogen -> 5
+            writer.writerow([pos, box, rack, freezer])
 
 def select_positions_for_material(material, available_positions):
     """
