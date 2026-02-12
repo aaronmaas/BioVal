@@ -87,6 +87,5 @@ FREEZER_ORDER = {
 
 
 
-# Here the API TOKEN of SOPHIE need to go inside and the url for RD registry
+# Here the API TOKEN of SOPHIE need to go inside and the url for RD registry # this needs to be unvisable once you are ready
 API_URL = "https://redcap.uni-heidelberg.de/api/"
-API_TOKEN = "19C2091A845FCAB1954F79E7F1A44374"
