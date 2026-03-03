@@ -95,8 +95,8 @@ def run_validation():
         import_path = filedialog.askopenfilename(title="Select Import CSV")
         _, import_rows = u.read_csv(import_path)
 
-        v.validate_file(import_path, "Import file")
-        v.validate_file(ref_path, "Reference data")
+        ref_rows, reference_errors = v.validate_reference_file(ref_path, "Reference data")
+        _, import_errors = v.validate_import_file(import_path, "Import file", ref_rows)
 
         v.check_internal_duplicates(import_rows, "Import file")
         v.check_internal_duplicates(reference_rows, "Reference data")
@@ -120,10 +120,11 @@ def run_validation():
             u.write_report(
                 report_path,
                 import_path,
-                ref_path,
-                labid_messages,
                 import_rows,
-                duplicate_positions_count
+                ref_path,
+                import_errors,
+                reference_errors,
+                labid_messages,
             )
             messagebox.showinfo("Success", "Validation completed!")
         else:

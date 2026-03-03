@@ -18,9 +18,23 @@ def read_csv(path):
         rows = list(reader)
     return reader.fieldnames, rows
 
+def make_instance_key(row):
+    """
+    Helper function. Generates key for the instance validation.
 
-def write_report(filename, import_file, reference_file, labid_messages =None, import_rows=None,
-                 errors=None, recommendation=None):
+    Args:
+        row (list): List of data for specific row in import or reference. 
+
+    Returns:
+        Tupel: [Study_id(XXX-XXX-XXX), redcap_repeat_instance(int)] 
+    """
+    return (
+        row.get("study_id", "").strip(),
+        row.get("redcap_repeat_instance", "").strip(),
+    )          
+            
+def write_report(filename, import_file, import_rows, reference_file, 
+                 error_input, error_reference, labid_messages = None, recommendation=None):
     """
     Writes a validation report to a text file.
 
@@ -48,9 +62,17 @@ def write_report(filename, import_file, reference_file, labid_messages =None, im
         f.write("\n")
 
         # Errors
-        f.write("Errors / Warnings:\n")
-        if errors and len(errors) > 0:
-            for e in errors:
+        f.write("Errors / Warnings Inputfile:\n")
+        if error_input and len(error_input) > 0:
+            for e in error_input:
+                f.write(f" - {e}\n")
+        else:
+            f.write(" - None\n")
+        f.write("\n")
+        
+        f.write("Errors / Warnings Referencefile:\n")
+        if error_reference and len(error_reference) > 0:
+            for e in error_reference:
                 f.write(f" - {e}\n")
         else:
             f.write(" - None\n")
@@ -160,16 +182,10 @@ def assign_lab_patient_ids(import_rows, reference_rows):
     study_to_lab, lab_to_study, used_lab_ids = build_patient_map(reference_rows)
     next_id = get_next_lab_patient_id(used_lab_ids)
     labid_messages = [f"Next available lab patient ID: {next_id:05d}"]
-    
+        
     #ich checke hier actuell nur die imported rows! 
     for i, row in enumerate(import_rows, start=2):
         study_id = row.get("study_id", "").strip()
-
-        if not study_id:
-            raise Exception(f"Row {i}: Missing study_id")
-
-        if not STUDY_ID_PATTERN.match(study_id):
-            raise Exception(f"Row {i}: Invalid study_id format '{study_id}'")
 
         if study_id in study_to_lab:
             row["lab_id"] = study_to_lab[study_id]
@@ -180,7 +196,6 @@ def assign_lab_patient_ids(import_rows, reference_rows):
             used_lab_ids.add(next_id)
             next_id += 1
             labid_messages.append(
-                f"Assigned lab patient ID {lab_id} to study ID {study_id}"
-            )
+                f"Assigned lab patient ID {lab_id} to study ID {study_id}")
 
     return import_rows, labid_messages

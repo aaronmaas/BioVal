@@ -18,16 +18,18 @@ DNA = ["DNA"]
 PAXGENE =  ["PAXgene"]
 CELLS = ["Fibroblasten", "PBMC"]
 
+REDCAP_EVENT_NAME = ["participant_regist_arm_1"]
+REDCAP_REPEAT_INSTRUMENTS = ["biorepository"]
+
+VALID_tube_status = ["stored", "shipped", "consumed", "discarded", "lost"]
+
 #Study_id pattern is in the order XXX-XXX-XXX with x being a natural number
 STUDY_ID_PATTERN = re.compile(r"^\d{3}-\d{3}-\d{3}$") #d means here digit betwenn 0-9
-
-#Valid tube status por favor? 
-VALID_tube_status = [""]
 
 #Allowed matrices (positions) per biomaterial
 VALID_POS_FLUIDS = [f"{row}{col}" for row in "ABCDEFGH" for col in range(1, 13)]
 VALID_POS_PAXGENE = [f"{row}{col}" for row in "ABCDEFG" for col in range(1, 8)]
-VALID_POS_DNA_CELLS_PBMC =  [f"{row}{col}" for row in "ABCDEFGHJ" for col in range(1, 11)]
+VALID_POS_DNA_CELLS_PBMC =  [f"{row}{col}" for row in "ABCDEFGHIJ" for col in range(1, 11)]
 
 #Freezers
 VALID_FREEZER = ["1", "2", "3", "nitrogen", "4deg"]
@@ -35,7 +37,7 @@ VALID_FREEZER = ["1", "2", "3", "nitrogen", "4deg"]
 #Boxes (same for all, unless exception later)
 VALID_BOX = [str(i) for i in range(1, 43)]  # 1–42
 
-#Racks
+#Racks # this cannot be same for all but is now
 VALID_RACK = [str(i) for i in range(1, 101)]  # 1–100
 
 #Storage Rules for the availability check up
@@ -43,7 +45,7 @@ STORAGE_RULES = {
     "BIOFLUID": {
         "freezers": ["1", "2", "3"],
         "racks": list(map(str, range(1, 8))),   # 1–7
-        "boxes_per_rack": 7,
+        "boxes_per_rack": 42,
         "rows": list("ABCDEFGH"),
         "cols": list(map(str, range(1, 13))),   # 1–12
     },
@@ -51,7 +53,7 @@ STORAGE_RULES = {
     "PAXGENE": {
         "freezers": ["1", "2", "3"],
         "racks": list(map(str, range(1, 8))),
-        "boxes_per_rack": 7,
+        #"boxes_per_rack": 7,
         "rows": list("ABCDEFG"),
         "cols": list(map(str, range(1, 8))),    # 1–7
     },
@@ -59,7 +61,7 @@ STORAGE_RULES = {
     "DNA": {
         "freezers": ["4deg"],
         "racks": list(map(str, range(1, 8))),
-        "boxes_per_rack": 7,
+        #"boxes_per_rack": 7,
         "rows": list("ABCDEFGHIJ"),
         "cols": list(map(str, range(1, 11))),   # 1–10
     },
