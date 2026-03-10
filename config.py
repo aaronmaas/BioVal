@@ -10,21 +10,24 @@ REQUIRED_FIELDS = [
 #Valid Biomaterial in aliquots
 VALID_MATERIALS = [
     "csf", "csf pellet", "dna", "edta plasma", "fibroblasten",
-    "paxgene", "pbmc", "serum", "urin"
+    "paxgene", "pbmc", "serum", "urine"
 ]
 
-BIOFLUIDS = ["Urin", "EDTA Plasma", "Serum", "CSF", "CSF Pellet"]
-DNA = ["DNA"]
-PAXGENE =  ["PAXgene"]
-CELLS = ["Fibroblasten", "PBMC"]
+#The numbers represent the corresponding code for redcap for a given material
+BIOFLUIDS = ["urine", "Urine" , "EDTA Plasma", "edta plasma", "Serum", "serum", "CSF","csf", "CSF Pellet", "csf pellet",
+            "1", "2", "3", "7", "8"]
+DNA = ["DNA", "dna", "4" ]
+PAXGENE =  ["PAXgene", "paxgene", "5"]
+CELLS = ["Fibroblasten", "PBMC", "fibroblasten", "pbmc", "6", "9"]
 
 REDCAP_EVENT_NAME = ["participant_regist_arm_1"]
 REDCAP_REPEAT_INSTRUMENTS = ["biorepository"]
 
-VALID_tube_status = ["stored", "shipped", "consumed", "discarded", "lost"]
+VALID_TUBE_STATUS = ["1", "2", "3", "4", "5"]
 
 #Study_id pattern is in the order XXX-XXX-XXX with x being a natural number
-STUDY_ID_PATTERN = re.compile(r"^\d{3}-\d{3}-\d{3}$") #d means here digit betwenn 0-9
+#STUDY_ID_PATTERN = re.compile(r"^\d{3}-\d{3}-\d{3}$") #d means here digit betwenn 0-9 also Xs must be allowed
+STUDY_ID_PATTERN = re.compile(r'^[0-9X]{3}-[0-9X]{3}-[0-9X]{3}$')
 
 #Allowed matrices (positions) per biomaterial
 VALID_POS_FLUIDS = [f"{row}{col}" for row in "ABCDEFGH" for col in range(1, 13)]
@@ -66,13 +69,13 @@ STORAGE_RULES = {
         "cols": list(map(str, range(1, 11))),   # 1–10
     },
 
-    "CELLS": {
-        "freezers": ["nitrogen"],
-        "racks": list(map(str, range(1, 8))),   # assumption for now
-        "boxes_per_rack": 14,                   # boxnum fortlaufend
-        "rows": list("ABCDEFGHIJ"),
-        "cols": list(map(str, range(1, 11))),
-    },
+    #"CELLS": {
+    #    "freezers": ["nitrogen"],
+    #    "racks": list(map(str, range(1, 8))),   # assumption for now
+    #    "boxes_per_rack": 14,                   # boxnum fortlaufend
+    #    "rows": list("ABCDEFGHIJ"),
+    #    "cols": list(map(str, range(1, 11))),
+    #},
 }
 
 

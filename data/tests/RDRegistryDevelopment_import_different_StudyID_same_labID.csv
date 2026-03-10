@@ -1,0 +1,3 @@
+biomaterial,biorepository_complete,box,box_id,comment,fibro_passage,freezer,lab_id,rack,redcap_event_name,redcap_repeat_instance,redcap_repeat_instrument,reserved_date,reserved_for,sampling_date,sent_date,sent_project,study,study_id,tube_id,tube_pos,tube_status,volume_cell_number,welcome_complete
+1,,1,12346,,,1,1,1,participant_regist_arm_1,1,biorepository,,,07/02/26,,,POLR3A,111-222-789,12345,A2,1,,
+1,,1,12345,,,1,1,1,participant_regist_arm_1,1,biorepository,,,07/02/26,,,POLR3A,111-222-78X,45678,A3,1,,

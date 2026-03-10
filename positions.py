@@ -53,9 +53,10 @@ def generate_positions_for_material(material_key):
     """
     rules = STORAGE_RULES[material_key]
     positions = set()
+    boxes = rules.get("boxes_per_rack", 1)
 
     for freezer, rack in product(rules["freezers"], rules["racks"]):
-        for box in map(str, range(1, rules["boxes_per_rack"] + 1)):
+        for box in map(str, range(1, boxes + 1)):
             for row, col in product(rules["rows"], rules["cols"]):
                 pos = f"{row}{col}"
                 positions.add((freezer, rack, box, pos))

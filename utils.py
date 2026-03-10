@@ -72,8 +72,19 @@ def write_report(filename, import_file, import_rows, reference_file,
         
         f.write("Errors / Warnings Referencefile:\n")
         if error_reference and len(error_reference) > 0:
-            for e in error_reference:
-                f.write(f" - {e}\n")
+            for error_list in error_reference:
+                if not error_list:
+                    continue
+
+                row_prefix = error_list[0].split(":")[0]  # splitting rows
+                f.write(f"\n{row_prefix}:\n")
+
+                for error in error_list:
+                    message = error.split(":", 1)[1].strip()
+                    f.write(f"  - {message}\n")
+            
+            #for e in error_reference:
+            #    f.write(f" - {e}\n")
         else:
             f.write(" - None\n")
         f.write("\n")
@@ -88,11 +99,11 @@ def write_report(filename, import_file, import_rows, reference_file,
         f.write("\n")
         
         # Recommendation
-        f.write("Recommendation:\n")
-        if recommendation:
-            f.write(f"{recommendation}\n")
-        else:
-            f.write("No recommendation provided.\n")
+        #f.write("Recommendation:\n")
+        #if recommendation:
+        #    f.write(f"{recommendation}\n")
+        #else:
+        #    f.write("No recommendation provided.\n")
             
             
 def save_data_as_csv(records, out_path):

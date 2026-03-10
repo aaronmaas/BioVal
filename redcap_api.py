@@ -16,9 +16,16 @@ def download_reference_from_redcap(api_url, api_token,report_id = "27", form_nam
 
     data = {
         'token': api_token,
-        'content': 'report',
+        'action': 'export',
+        'content': 'record',
         'format': 'json',
         'report_id': report_id,
+        'forms[0]': form_name,
+        'fields[0]': 'study_id',
+        #'fields[1]': 'redcap_event_name',
+        #'fields[2]': 'redcap_repeat_instrument',
+        #'fields[3]': 'redcap_repeat_instance',
+        'events[0]': 'participant_regist_arm_1',
         'csvDelimiter': '',
         'rawOrLabel': 'raw',
         'rawOrLabelHeaders': 'raw',

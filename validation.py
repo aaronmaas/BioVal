@@ -1,5 +1,5 @@
 from config import REQUIRED_FIELDS, VALID_POS_PAXGENE, VALID_POS_FLUIDS, VALID_POS_DNA_CELLS_PBMC, VALID_RACK
-from config import BIOFLUIDS, CELLS, DNA, PAXGENE, VALID_BOX, STUDY_ID_PATTERN, REDCAP_EVENT_NAME, REDCAP_REPEAT_INSTRUMENTS
+from config import BIOFLUIDS, CELLS, DNA, PAXGENE, VALID_BOX, STUDY_ID_PATTERN, REDCAP_EVENT_NAME, REDCAP_REPEAT_INSTRUMENTS, VALID_TUBE_STATUS
 from utils import read_csv
 from utils import make_instance_key
 
@@ -71,11 +71,13 @@ def validate_row(row, index):
             errors.append(
                 f"Row {index}: redcap_repeat_instance must be >= 1"
             )
-    
+            
+    print(tube_pos)
+    # Unfortunately its different for the upload and import file!
     #  Material-specific storage rules - safe in errors if there is a mistake
     if biomaterial in BIOFLUIDS:  # fluids
         if tube_pos not in VALID_POS_FLUIDS:
-            errors.append(f"Row {index}: Invalid tube-pos '{tub_pos}' for {biomaterial} (must be A1–H10)")
+            errors.append(f"Row {index}: Invalid tube-pos '{tube_pos}' for {biomaterial} (must be A1–H10)")
         if freezer not in ["1", "2", "3"]:
             errors.append(f"Row {index}: {biomaterial} must be stored in -80 freezers (1–3).")
         if rack not in range(1,101): 
@@ -90,7 +92,7 @@ def validate_row(row, index):
             errors.append(f"Row {index}: Invalid tube-pos '{tube_pos}' for PAXgene (must be A1–G7)")
         if freezer not in ["1", "2", "3"]:
             errors.append(f"Row {index}: PAXgene must be stored in -80 freezers (1–3).")
-        if box not in range(1,501): 
+        if box not in range(1,501):  #das als string!
             errors.append(f"Row {index}: Invalid box number '{box}' for {biomaterial} (must be 1-500)")
         if rack:
             errors.append(f"Row {index}: Rack must be empty for {biomaterial}") 
@@ -125,7 +127,7 @@ def validate_row(row, index):
         errors.append(f"Row {index}: Unknown or unsupported material '{biomaterial}'")
    
     # General checks
-    if tube_status not in range(1,6): 
+    if tube_status not in VALID_TUBE_STATUS: 
         errors.append(f"Row {index}: Invalid tube_status '{tube_status}' for {biomaterial} (must be 1-5)")   
         
     if not study_id:
