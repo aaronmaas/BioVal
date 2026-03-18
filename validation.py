@@ -54,6 +54,11 @@ def validate_row(row, index):
     tube_status = row.get("tube_status", "").strip()
     study_id = row.get("study_id", "").strip()
     box_id = row.get("box_id","").strip()
+    
+
+    # SKIP LOGIC: leere REDCap-Zeilen in ref_file ignorieren
+    if not biomaterial and not redcap_repeat_instrument and not tube_pos:
+        return []
    
     # Check if redcap_event_name is in RDregistry
     if redcap_event_name not in REDCAP_EVENT_NAME:
@@ -80,9 +85,9 @@ def validate_row(row, index):
             errors.append(f"Row {index}: Invalid tube-pos '{tube_pos}' for {biomaterial} (must be A1–H10)")
         if freezer not in ["1", "2", "3"]:
             errors.append(f"Row {index}: {biomaterial} must be stored in -80 freezers (1–3).")
-        if rack not in range(1,101): 
+        if rack not in VALID_RACK: 
             errors.append(f"Row {index}: Invalid rack number '{rack}' for {biomaterial} (must be 1-100)")
-        if box not in range(1,1001): 
+        if box not in VALID_BOX: 
             errors.append(f"Row {index}: Invalid box number '{box}' for {biomaterial} (must be 1-1000)")
         if not box_id: 
             errors.append(f"Row {index}: Invalid box or empty box ID '{box_id}' for {biomaterial} (must be unique ID)")

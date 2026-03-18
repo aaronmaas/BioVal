@@ -1,8 +1,7 @@
 # README 
 
-BioVal is a validation tool for crossvalidation of an imput file to upload on RedCAP and a ref file (the already existing data on RedCAP). 
-The code runs locally and is fully python based and prevents the loss of information as the RedCap Importfile system is not reliable enough to perform
-the validation tasks. 
+BioVal is a validation tool for crossvalidation of an imput file (import file) to upload on RedCAP and a ref file (the already existing data on RedCAP). 
+The code runs locally and is fully python based and prevents the loss of information as the RedCap data import system is not reliable enough to perform the validation tasks. 
 
 ## Dependencies
  - csv (inbuild python 3.9)
@@ -18,32 +17,77 @@ the validation tasks.
 
 ## How to use BioVal? 
 
-The package can be either used as jupyter notebook directly or as Graphical Interface. In both cases this is what you need: 
+The package can used via a graphical interface. 
 
-- csv input file in BioVal/templates/
+#### Quickstart:
+
+In your Terminal with conda environment:
+- type python BioVal.py 
+- follow the instructions
+
+ Here is what you need to start:
+- csv template file in BioVal/templates/
 - csv ref file at the moment as direct download from redcap
-- csv lab ID file (this is not setup, but you wanted to use the patIDs instead of TreatHSP locally, this file needs to be stored, backed up and filled everytime you do an upload!)
+- csv data to upload from scan 
 
 The inbuild functions of the BioVal Package first validate the input and ref files row by row in the csv file, such that it will detect any errors for example in the input file AND in the ref file! This sound
-paranoid, but in case somebody unintantionally makes a mistake while entring data manually on the RedCap repository, it is necessary to double check the ref file. Easiest way, would be to also 
-give the write function on the Biorepository in RedCap only to people which should have it. But just in case, the functionality of BioVal tackels both sides of the input and ref files to avoid any
-mistakes. 
+paranoid, but in case somebody unintantionally makes a mistake while entring data manually on the RedCap repository, it is necessary to double check the ref file. 
+
+#### Functionalities
 
 The main task of the BioVal functions is to ensure the input is correct for any chosen Biofluid (Serum, EDTA Plasma, Urin, CFR, CFR pellets)  or culture (Fibroblasts, PAXgene, PBMC, DNA), e.g. the Biofluids must be stored
-in the -80°C freezers and not in the nitrogen freezer ([-150,-196]°C). Also the structure of the box, rack system is in both cases slidly different such that the package handels the input. The Biofluids can be stored in racks with in total 6 boxes each; where the boxes cover a matrix of A1-H12 (8x12=96 Kryotubesspaces), whereas the nitrogen .................??? 
+in the -80°C freezers and not in the nitrogen freezer ([-150,-196]°C). Also the structure of the box, rack system is different for e.g. Biofluids and PAXgene. For the values that are allowed to be entered please refer to BioVal/templates/RDRegistry_Import_variable_values.xlsm . There you find an overview about the required fields and there respective values.
 
-In the validation progress also the input is evaluated in case of required fields. It is not possible to upload data without specifying the position or the material type and patient ID. 
+After the validation ran BioVal gives a feedback with a small txt file showing all errors that have occured. It is to be reviewed carefully!
 
-After the validation ran BioVal gives a feedback with a small txt file showing all errors that might have occured and giving based on it a recommendation for upload or not upload. 
+#### Workflow BioVal validated Upload the RedCap
 
-#### Workflow 
+1. Open BioVal  
+    - Either run python BioVal.py in /BioVal directory
+    - or run application in /BioVal/dist 
+2. Click Button Start BioVal
+3. Select Biomaterial which should be integrated; 
+    - for every Biomaterial you want to include you would need to actually make one BioVal round
+4. BioVal generates the avaialble positions for the Biomaterial 
+    - save where you would like the available positions csv (you can copy from here directly positions) be careful to not change the name so that it gets overwritten and you dont exidently use an old one!
+    - BioVal opens the new csv - depending on the material 
+    - BIOFLUIDS in One box at least 15 spots must be free (maximum number of free positions shown 40)
+    - PAXGene, DNA  also single positions are shown (15 free positions are shown) 
+5. Cut positions out in the template file and safe it as import file 
+    - don't copy, I think it is safer that way; but the validation should also take care of it otherwise
+6. Select the generated import file
+7. Validate (BioVal handles it)
+    - import file
+    - reference file
+8. Save report
+9. Inspect report
+    - if hard errors occur, things that cannot be tolerated; the programm terminates with the explicit ValueError or ValidationError. In the row by row validation the errors are stored to the save report. In case of a hard error, the programm terminates without generating a report but showing the error! 
+    - review carefully!
+10. Go To RedCap to DATA import tool and import the validated import file. 
+11. Review the changes shown by RedCap. Import file.
+11. Delete the import file. 
 
-1. Download the ref file from RedCap repository (here create build in solution)
-   atm. In REDCap go to Data Export. Choose B Selected instruments and/or events (all records) - use all events. Download the csv file. This file will be the reference file.
-2. Fill in the required variables in the template file (colorcoded)
-3. Run validation either with GUI or python
-4. Evaluation of the error file
-5. In case of positive evaluation, upload on RedCap. In case of negative evaluation BioVal will pinpoint on the specific row in the csv files where problems have occured, such that they should be easy to fix
+#### BioVal validated status change: 
+
+
+
+#### How to install: 
+
+1. Get anaconda
+    - https://www.anaconda.com/docs/getting-started/anaconda/install/overview 
+    - choose then your operational system and graphical download
+    - follow the instructions
+2. Get git
+    - https://github.com/git-guides/install-git 
+    - for MacOs it can be necessary to use
+        - xcode-select --install  command in the terminal!
+3. Install BioVal 
+   - write in terminal at the location you want to install BioVal (e.g. Desktop) 
+       - git clone https://github.com/aaronmaas/BioVal.git
+4. Optional: Build completly clickable version
+   - 
+
+
 
 
 

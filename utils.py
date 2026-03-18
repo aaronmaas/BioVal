@@ -70,6 +70,15 @@ def write_report(filename, import_file, import_rows, reference_file,
             f.write(" - None\n")
         f.write("\n")
         
+        # Lab Id assignment
+        f.write("Lab Id assignment")
+        if labid_messages: 
+            for msg in labid_messages:
+                f.write(f" - {msg}\n")
+        else:
+            f.write(" - None\n")
+        f.write("\n")
+        
         f.write("Errors / Warnings Referencefile:\n")
         if error_reference and len(error_reference) > 0:
             for error_list in error_reference:
@@ -89,14 +98,7 @@ def write_report(filename, import_file, import_rows, reference_file,
             f.write(" - None\n")
         f.write("\n")
         
-        # Lab Id assignment
-        f.write("Lab Id assignment")
-        if labid_messages: 
-            for msg in labid_messages:
-                f.write(f" - {msg}\n")
-        else:
-            f.write(" - None\n")
-        f.write("\n")
+        
         
         # Recommendation
         #f.write("Recommendation:\n")
@@ -117,7 +119,9 @@ def save_data_as_csv(records, out_path):
     if not records:
         raise Exception("No records to write.")
 
-    keys = sorted(records[0].keys())
+    keys = records[0].keys() #without sorted otherwise it is alphabetic
+    
+    #['study_id', 'redcap_event_name','redcap_repeat_instance','redcap_repeat_instrument','lab_id','study','sampling_date','biomaterial','volume_cell_number','tube_id','box_id','tube_pos','box','rack','freezer','tube_status','fibro_passage','sent_date','sent_project','reserved_date','reserved_for','comment','biorepository_complete']
 
     with open(out_path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=keys)

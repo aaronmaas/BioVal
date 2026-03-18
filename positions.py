@@ -78,7 +78,7 @@ def get_available_positions(material_key, reference_rows):
     """
     all_pos = generate_positions_for_material(material_key)
     occupied = get_occupied_positions(reference_rows)
-    return sorted(all_pos - occupied)
+    return sorted(all_pos - occupied, key=position_sort_key)
 
 
 
@@ -208,10 +208,10 @@ def select_positions_biofluids(available_positions):
         box_count += 1
         for pos in positions:
             selected.append((freezer, rack, box, pos))
-            if len(selected) >= 40:
+            if len(selected) >= 300:  ##return 40 selected
                 return selected
 
-        if box_count >= 2:
+        if box_count >= 3: #eigentlich 2
             break
 
     return selected

@@ -38,10 +38,10 @@ VALID_POS_DNA_CELLS_PBMC =  [f"{row}{col}" for row in "ABCDEFGHIJ" for col in ra
 VALID_FREEZER = ["1", "2", "3", "nitrogen", "4deg"]
 
 #Boxes (same for all, unless exception later)
-VALID_BOX = [str(i) for i in range(1, 43)]  # 1–42
+VALID_BOX = [str(i) for i in range(1, 101)]  # 1–42
 
 #Racks # this cannot be same for all but is now
-VALID_RACK = [str(i) for i in range(1, 101)]  # 1–100
+VALID_RACK = [str(i) for i in range(1, 1001)]  # 1–100
 
 #Storage Rules for the availability check up
 STORAGE_RULES = {
