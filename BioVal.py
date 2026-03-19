@@ -15,7 +15,7 @@ import validation as v
 from redcap_api import download_reference_from_redcap
 
  
-API_TOKEN = "7504C26416BB071BDF3B88E3F570D47A"
+API_TOKEN = ""
 
 #### you need to go through and change the functions - so that it works correctly less import
 

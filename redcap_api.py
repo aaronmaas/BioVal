@@ -19,7 +19,7 @@ def download_reference_from_redcap(api_url, api_token,report_id = "27", form_nam
         'action': 'export',
         'content': 'record',
         'format': 'json',
-        'report_id': report_id,
+        #'report_id': report_id,
         'forms[0]': form_name,
         'fields[0]': 'study_id',
         #'fields[1]': 'redcap_event_name',

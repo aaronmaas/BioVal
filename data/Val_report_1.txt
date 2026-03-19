@@ -1,5 +1,5 @@
 Biorepository Data Validation Report
-Date: 2026-03-18 19:24
+Date: 2026-03-19 14:29
 ==================================================
 
 Input files:
@@ -17,4 +17,112 @@ Lab Id assignment - Next available lab patient ID: 00011
  - Assigned lab patient ID 00012 to study ID 111-222-78X
 
 Errors / Warnings Referencefile:
+
+Row 4:
+  - Missing value in 'lab_id'
+
+Row 5:
+  - Missing value in 'lab_id'
+
+Row 6:
+  - Missing value in 'lab_id'
+
+Row 7:
+  - Missing value in 'lab_id'
+
+Row 8:
+  - Missing value in 'lab_id'
+
+Row 9:
+  - Missing value in 'lab_id'
+
+Row 10:
+  - Missing value in 'lab_id'
+
+Row 11:
+  - Missing value in 'lab_id'
+
+Row 12:
+  - Missing value in 'lab_id'
+
+Row 13:
+  - Missing value in 'lab_id'
+
+Row 14:
+  - Missing value in 'lab_id'
+
+Row 15:
+  - Missing value in 'lab_id'
+
+Row 16:
+  - Missing value in 'lab_id'
+
+Row 17:
+  - Missing value in 'lab_id'
+
+Row 18:
+  - Missing value in 'lab_id'
+
+Row 19:
+  - Missing value in 'lab_id'
+
+Row 20:
+  - Missing value in 'lab_id'
+
+Row 21:
+  - Missing value in 'lab_id'
+
+Row 22:
+  - Missing value in 'lab_id'
+
+Row 23:
+  - Missing value in 'lab_id'
+
+Row 24:
+  - Missing value in 'lab_id'
+
+Row 25:
+  - Missing value in 'lab_id'
+
+Row 26:
+  - Missing value in 'lab_id'
+
+Row 27:
+  - Missing value in 'lab_id'
+
+Row 28:
+  - Missing value in 'lab_id'
+
+Row 29:
+  - Missing value in 'lab_id'
+
+Row 30:
+  - Missing value in 'lab_id'
+
+Row 31:
+  - Missing value in 'lab_id'
+
+Row 32:
+  - Missing value in 'lab_id'
+
+Row 33:
+  - Missing value in 'lab_id'
+
+Row 34:
+  - Missing value in 'lab_id'
+
+Row 35:
+  - Missing value in 'lab_id'
+
+Row 36:
+  - Missing value in 'lab_id'
+
+Row 37:
+  - Missing value in 'lab_id'
+
+Row 38:
+  - Missing value in 'lab_id'
+
+Row 39:
+  - Missing value in 'lab_id'
 
