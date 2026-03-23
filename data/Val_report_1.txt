@@ -1,5 +1,5 @@
 Biorepository Data Validation Report
-Date: 2026-03-19 14:29
+Date: 2026-03-23 19:59
 ==================================================
 
 Input files:
@@ -10,119 +10,426 @@ Summary:
  - Number of import rows processed: 2
 
 Errors / Warnings Inputfile:
- - None
+ - Row 2: Missing value in 'redcap_repeat_instance'
+ - Row 3: Missing value in 'redcap_repeat_instance'
 
-Lab Id assignment - Next available lab patient ID: 00011
- - Assigned lab patient ID 00011 to study ID 111-222-789
- - Assigned lab patient ID 00012 to study ID 111-222-78X
+Lab Id assignment - Next available lab patient ID: 00029
+ - Assigned lab patient ID 00029 to study ID 111-222-789
+ - Assigned lab patient ID 00030 to study ID 111-222-78X
+
+Red cap instance assignment - Row 2: Assigned new instance 1 to patient 111-222-789
+ - Row 3: Assigned new instance 1 to patient 111-222-78X
 
 Errors / Warnings Referencefile:
 
-Row 4:
+Row 3:
+  - Missing value in 'study'
   - Missing value in 'lab_id'
-
-Row 5:
-  - Missing value in 'lab_id'
-
-Row 6:
-  - Missing value in 'lab_id'
-
-Row 7:
-  - Missing value in 'lab_id'
-
-Row 8:
-  - Missing value in 'lab_id'
-
-Row 9:
-  - Missing value in 'lab_id'
-
-Row 10:
-  - Missing value in 'lab_id'
-
-Row 11:
-  - Missing value in 'lab_id'
-
-Row 12:
-  - Missing value in 'lab_id'
-
-Row 13:
-  - Missing value in 'lab_id'
+  - Missing value in 'sampling_date'
+  - Missing value in 'biomaterial'
+  - Missing value in 'tube_pos'
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'freezer'
+  - Missing value in 'rack'
+  - Missing value in 'box'
+  - Missing value in 'tube_status'
+  - Unknown or unsupported material ''
+  - Invalid tube_status '' for  (must be 1-5)
 
 Row 14:
-  - Missing value in 'lab_id'
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
 
 Row 15:
-  - Missing value in 'lab_id'
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
 
-Row 16:
-  - Missing value in 'lab_id'
+Row 57:
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
 
-Row 17:
-  - Missing value in 'lab_id'
+Row 58:
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
 
-Row 18:
-  - Missing value in 'lab_id'
+Row 62:
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
 
-Row 19:
-  - Missing value in 'lab_id'
+Row 63:
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
 
-Row 20:
-  - Missing value in 'lab_id'
+Row 120:
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
 
-Row 21:
-  - Missing value in 'lab_id'
+Row 121:
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
 
-Row 22:
-  - Missing value in 'lab_id'
+Row 135:
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
 
-Row 23:
-  - Missing value in 'lab_id'
+Row 184:
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
 
-Row 24:
-  - Missing value in 'lab_id'
+Row 185:
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
 
-Row 25:
-  - Missing value in 'lab_id'
+Row 186:
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
 
-Row 26:
-  - Missing value in 'lab_id'
+Row 187:
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
 
-Row 27:
-  - Missing value in 'lab_id'
+Row 208:
+  - Missing value in 'sampling_date'
 
-Row 28:
-  - Missing value in 'lab_id'
+Row 209:
+  - Missing value in 'sampling_date'
 
-Row 29:
-  - Missing value in 'lab_id'
+Row 210:
+  - Missing value in 'sampling_date'
 
-Row 30:
-  - Missing value in 'lab_id'
+Row 211:
+  - Missing value in 'sampling_date'
 
-Row 31:
-  - Missing value in 'lab_id'
+Row 212:
+  - Missing value in 'sampling_date'
 
-Row 32:
-  - Missing value in 'lab_id'
+Row 213:
+  - Missing value in 'sampling_date'
 
-Row 33:
-  - Missing value in 'lab_id'
+Row 214:
+  - Missing value in 'sampling_date'
 
-Row 34:
-  - Missing value in 'lab_id'
+Row 215:
+  - Missing value in 'sampling_date'
 
-Row 35:
-  - Missing value in 'lab_id'
+Row 216:
+  - Missing value in 'sampling_date'
 
-Row 36:
-  - Missing value in 'lab_id'
+Row 217:
+  - Missing value in 'sampling_date'
 
-Row 37:
-  - Missing value in 'lab_id'
+Row 218:
+  - Missing value in 'sampling_date'
 
-Row 38:
-  - Missing value in 'lab_id'
+Row 219:
+  - Missing value in 'sampling_date'
 
-Row 39:
-  - Missing value in 'lab_id'
+Row 220:
+  - Missing value in 'sampling_date'
+
+Row 221:
+  - Missing value in 'sampling_date'
+
+Row 222:
+  - Missing value in 'sampling_date'
+
+Row 223:
+  - Missing value in 'sampling_date'
+
+Row 224:
+  - Missing value in 'sampling_date'
+
+Row 225:
+  - Missing value in 'sampling_date'
+
+Row 226:
+  - Missing value in 'sampling_date'
+
+Row 227:
+  - Missing value in 'sampling_date'
+
+Row 228:
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
+
+Row 229:
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
+
+Row 268:
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
+
+Row 269:
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
+
+Row 291:
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
+
+Row 292:
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
+
+Row 352:
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
+
+Row 353:
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
+
+Row 372:
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
+
+Row 373:
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
+
+Row 376:
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
+
+Row 377:
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
+
+Row 381:
+  - Missing value in 'study'
+
+Row 382:
+  - Missing value in 'study'
+
+Row 383:
+  - Missing value in 'study'
+
+Row 384:
+  - Missing value in 'study'
+
+Row 385:
+  - Missing value in 'study'
+
+Row 386:
+  - Missing value in 'study'
+
+Row 387:
+  - Missing value in 'study'
+
+Row 388:
+  - Missing value in 'study'
+
+Row 389:
+  - Missing value in 'study'
+
+Row 390:
+  - Missing value in 'study'
+
+Row 391:
+  - Missing value in 'study'
+
+Row 392:
+  - Missing value in 'study'
+
+Row 393:
+  - Missing value in 'study'
+
+Row 394:
+  - Missing value in 'study'
+
+Row 395:
+  - Missing value in 'study'
+
+Row 396:
+  - Missing value in 'study'
+
+Row 397:
+  - Missing value in 'study'
+
+Row 398:
+  - Missing value in 'study'
+
+Row 399:
+  - Missing value in 'study'
+
+Row 400:
+  - Missing value in 'study'
+
+Row 419:
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
+
+Row 420:
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
+
+Row 436:
+  - Missing value in 'study'
+
+Row 437:
+  - Missing value in 'study'
+
+Row 438:
+  - Missing value in 'study'
+
+Row 439:
+  - Missing value in 'study'
+
+Row 440:
+  - Missing value in 'study'
+
+Row 441:
+  - Missing value in 'study'
+
+Row 462:
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
+
+Row 463:
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
+
+Row 562:
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
+
+Row 563:
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
+
+Row 575:
+  - Missing value in 'study'
+
+Row 576:
+  - Missing value in 'study'
+
+Row 577:
+  - Missing value in 'study'
+
+Row 578:
+  - Missing value in 'study'
+
+Row 579:
+  - Missing value in 'study'
+
+Row 580:
+  - Missing value in 'study'
+
+Row 581:
+  - Missing value in 'study'
+
+Row 582:
+  - Missing value in 'study'
+
+Row 583:
+  - Missing value in 'study'
+
+Row 584:
+  - Missing value in 'study'
+
+Row 585:
+  - Missing value in 'study'
+
+Row 586:
+  - Missing value in 'study'
+
+Row 587:
+  - Missing value in 'study'
+
+Row 588:
+  - Missing value in 'study'
+
+Row 589:
+  - Missing value in 'study'
+
+Row 590:
+  - Missing value in 'study'
+
+Row 591:
+  - Missing value in 'study'
+
+Row 592:
+  - Missing value in 'study'
+
+Row 593:
+  - Missing value in 'study'
+
+Row 594:
+  - Missing value in 'study'
+
+Row 686:
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
+
+Row 687:
+  - Missing value in 'tube_id'
+  - Missing value in 'box_id'
+  - Missing value in 'rack'
+  - Invalid box number '1' for 5 (must be 1-500)
 

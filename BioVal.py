@@ -16,6 +16,7 @@ from redcap_api import download_reference_from_redcap
 
  
 API_TOKEN = ""
+ref_path = "/home/aaron/Desktop/BioVal/data/Ref_file_test.csv"
 
 #### you need to go through and change the functions - so that it works correctly less import
 
@@ -63,7 +64,7 @@ def run_validation():
         # 1. Download reference data
         # ===============================
         reference_rows = download_reference_from_redcap(API_URL, API_TOKEN)
-        ref_path = "/home/aaron/Desktop/BioVal/data/Ref_file_test.csv" ###
+        #ref_path = "/home/aaron/Desktop/BioVal/data/Ref_file_test.csv" ###
         u.save_data_as_csv(reference_rows, ref_path)
 
         # ===============================
@@ -105,6 +106,7 @@ def run_validation():
         duplicate_positions_count = v.check_duplicate_positions(import_rows, occupied_pos)
 
         import_rows, labid_messages = u.assign_lab_patient_ids(import_rows, reference_rows)
+        import_rows, instance_messages = u.assign_instances(import_rows, reference_rows)
         u.save_data_as_csv(import_rows, import_path)
 
         # ===============================
@@ -125,6 +127,7 @@ def run_validation():
                 import_errors,
                 reference_errors,
                 labid_messages,
+                instance_messages,
             )
             messagebox.showinfo("Success", "Validation completed!")
         else:
@@ -148,10 +151,10 @@ try:
     else:
     	base_path = os.path.dirname(os.path.abspath(__file__))
     logo_path = os.path.join(base_path,"images", "logo.jpeg")
-    print("DEBUG logo path:", logo_path)
-    print("DEBUG images dir exists:", os.path.exists(os.path.join(base_path, "images")))
-    print("DEBUG logo exists:", os.path.exists(os.path.join(base_path, "images", "logo.jpeg")))
-    print("DEBUG base_path contents:", os.listdir(base_path))
+    #print("DEBUG logo path:", logo_path)
+    #print("DEBUG images dir exists:", os.path.exists(os.path.join(base_path, "images")))
+    #print("DEBUG logo exists:", os.path.exists(os.path.join(base_path, "images", "logo.jpeg")))
+    #print("DEBUG base_path contents:", os.listdir(base_path))
 
     img = Image.open(logo_path)
 

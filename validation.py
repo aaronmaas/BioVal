@@ -141,11 +141,11 @@ def validate_row(row, index):
     elif not STUDY_ID_PATTERN.fullmatch(study_id):
         errors.append(f"Row {index}: Invalid study_id format '{study_id}'")
         
-    print(
-    "DEBUG study_id:",
-    repr(study_id),
-    "match:",
-    bool(STUDY_ID_PATTERN.fullmatch(study_id)))
+    #print(
+    #"DEBUG study_id:",
+    #repr(study_id),
+    #"match:",
+    #bool(STUDY_ID_PATTERN.fullmatch(study_id)))
 
     return errors
 
