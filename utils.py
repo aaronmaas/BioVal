@@ -71,7 +71,7 @@ def write_report(filename, import_file, import_rows, reference_file,
         f.write("\n")
         
         # Lab Id assignment
-        f.write("Lab Id assignment")
+        f.write("Lab Id assignment ")
         if labid_messages: 
             for msg in labid_messages:
                 f.write(f" - {msg}\n")
@@ -80,7 +80,7 @@ def write_report(filename, import_file, import_rows, reference_file,
         f.write("\n")
         
         # Instance assignment
-        f.write("Red cap instance assignment")
+        f.write("Red cap instance assignment \n")
         if instance_messages: 
             for msg in instance_messages:
                 f.write(f" - {msg}\n")
@@ -227,7 +227,7 @@ def assign_lab_patient_ids(import_rows, reference_rows):
 
 
 
-def build_instance_maps(reference_rows):
+def build_instance_maps_old(reference_rows):
     """
     Helper function. Builds necessary maps for red cap instances. One tube correponds to one red cap instance. Finds the maximum instance number for each study id such that an autoincrement can be performed for future instances.
     
@@ -269,7 +269,103 @@ def build_instance_maps(reference_rows):
     return study_to_max_instance, tube_map
 
 
+def build_instance_maps(reference_rows):
+    study_to_max_instance = {}
+    tube_map = {}
+
+    for row in reference_rows:
+        study_id = str(row.get("study_id", "")).strip()
+        instance = str(row.get("redcap_repeat_instance", "")).strip()
+
+        if not study_id or not instance:
+            continue
+
+        instance = int(instance)
+
+        # track max instance per study_id
+        study_to_max_instance[study_id] = max(
+            study_to_max_instance.get(study_id, 0),
+            instance
+        )
+
+        # --- build tube identifier ---
+        tube_id = str(row.get("tube_id", "")).strip()
+
+        if tube_id:
+            tube_key = tube_id
+        else:
+            freezer = str(row.get("freezer", "")).strip()
+            rack = str(row.get("rack", "")).strip()
+            box = str(row.get("box", "")).strip()
+            pos = str(row.get("tube_pos", "")).strip()
+
+            # only use position if complete
+            if all([freezer, rack, box, pos]):
+                tube_key = (freezer, rack, box, pos)
+            else:
+                continue  # cannot identify tube reliably
+
+        tube_map[(study_id, tube_key)] = instance
+
+    return study_to_max_instance, tube_map
+
 def assign_instances(import_rows, reference_rows):
+    study_to_max, tube_map = build_instance_maps(reference_rows)
+
+    messages = []
+
+    for i, row in enumerate(import_rows, start=2):
+        study_id = str(row.get("study_id", "")).strip()
+
+        if not study_id:
+            raise Exception(f"Row {i}: Missing study_id")
+
+        # --- build tube identifier ---
+        tube_id = str(row.get("tube_id", "")).strip()
+
+        if tube_id:
+            tube_key = tube_id
+        else:
+            freezer = str(row.get("freezer", "")).strip()
+            rack = str(row.get("rack", "")).strip()
+            box = str(row.get("box", "")).strip()
+            pos = str(row.get("tube_pos", "")).strip()
+
+            if all([freezer, rack, box, pos]):
+                tube_key = (freezer, rack, box, pos)
+            else:
+                raise Exception(
+                    f"Row {i}: Cannot identify tube (no tube_id and incomplete position)"
+                )
+
+        key = (study_id, tube_key)
+
+        # CASE 1: existing tube → reuse instance
+        if key in tube_map:
+            instance = tube_map[key]
+            row["redcap_repeat_instance"] = str(instance)
+
+            messages.append(
+                f"Row {i}: Reused instance {instance} for existing tube"
+            )
+
+        # CASE 2: new tube → assign next instance
+        else:
+            next_instance = study_to_max.get(study_id, 0) + 1
+
+            row["redcap_repeat_instance"] = str(next_instance)
+
+            study_to_max[study_id] = next_instance
+            tube_map[key] = next_instance
+
+            messages.append(
+                f"Row {i}: Assigned new instance {next_instance} to study {study_id}"
+            )
+
+    return import_rows, messages
+
+
+def assign_instances_old(import_rows, reference_rows):
     #print("Okay 1")
     study_to_max, tube_map = build_instance_maps(reference_rows)
     messages = []
