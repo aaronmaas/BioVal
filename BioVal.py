@@ -15,7 +15,7 @@ import validation as v
 from redcap_api import download_reference_from_redcap
 
  
-API_TOKEN = ""
+API_TOKEN = "7504C26416BB071BDF3B88E3F570D47A"
 ref_path = "/home/aaron/Desktop/BioVal/data/Ref_file_test.csv"
 
 #### you need to go through and change the functions - so that it works correctly less import
@@ -103,7 +103,7 @@ def run_validation():
         v.check_internal_duplicates(reference_rows, "Reference data")
 
         occupied_pos = p.get_occupied_positions(reference_rows)
-        duplicate_positions_count = v.check_duplicate_positions(import_rows, occupied_pos)
+        duplicate_positions_count = v.check_duplicate_positions(import_rows, occupied_pos, ref_rows)
 
         import_rows, labid_messages = u.assign_lab_patient_ids(import_rows, reference_rows)
         import_rows, instance_messages = u.assign_instances(import_rows, reference_rows)

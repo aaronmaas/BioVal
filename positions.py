@@ -19,23 +19,25 @@ def get_occupied_positions(rows):
     positions = set()
 
     for row in rows:
-        status = row.get("tube_status", "").strip()
+        status = str(row.get("tube_status", "")).strip()
 
         # Only "Stored" tubes occupy a position
         if status != "1":
             continue
 
         key = (
-            row.get("freezer", "").strip(),
-            row.get("rack", "").strip(),
-            row.get("box", "").strip(),
-            row.get("tube_pos", "").strip(),
+            str(row.get("freezer", "")).strip(),
+            str(row.get("rack", "")).strip(),
+            str(row.get("box", "")).strip(),
+            str(row.get("tube_pos", "")).strip(),
         )
 
         if all(key):
             positions.add(key)
 
     return positions
+
+
 
 
 def generate_positions_for_material(material_key):

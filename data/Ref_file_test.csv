@@ -1160,3 +1160,9 @@ study_id,redcap_event_name,redcap_repeat_instrument,redcap_repeat_instance,lab_i
 50-938-913-572,participant_regist_arm_1,,,,,,,,,,,,,,,,,,,,,
 50-962-784-411,participant_regist_arm_1,,,,,,,,,,,,,,,,,,,,,
 50-971-900-893,participant_regist_arm_1,,,,,,,,,,,,,,,,,,,,,
+111-222-787,participant_regist_arm_1,,,,,,,,,,,,,,,,,,,,,
+111-222-787,participant_regist_arm_1,biorepository,1,00002,POLR3A,2026-02-07,1,,1234,1234,A1,1,1,1,2,,,,,,,0
+111-222-787,participant_regist_arm_1,biorepository,2,00002,POLR3A,2026-02-07,1,,5555,1234,A2,1,1,1,2,,,,,,,0
+111-222-789,participant_regist_arm_1,,,,,,,,,,,,,,,,,,,,,
+111-222-789,participant_regist_arm_1,biorepository,1,00001,POLR3A,2026-02-07,1,,1234,1234,A1,5,1,1,2,,,,,,,0
+111-222-789,participant_regist_arm_1,biorepository,2,00001,POLR3A,2026-02-07,1,,5555,1234,A2,5,1,1,2,,,,,,,0

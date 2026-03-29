@@ -1,5 +1,5 @@
 Biorepository Data Validation Report
-Date: 2026-03-29 21:34
+Date: 2026-03-29 22:50
 ==================================================
 
 Input files:
@@ -10,14 +10,14 @@ Summary:
  - Number of import rows processed: 2
 
 Errors / Warnings Inputfile:
- - None
+ - Row 1: Tube instance 1 for patient 111-222-787 already exists in REDCap and must not be overwritten.
+ - Row 2: Tube instance 2 for patient 111-222-787 already exists in REDCap and must not be overwritten.
 
-Lab Id assignment  - Next available lab patient ID: 00001
- - Assigned lab patient ID 00001 to study ID 111-222-789
+Lab Id assignment  - Next available lab patient ID: 00003
 
 Red cap instance assignment 
- - Row 2: Assigned new instance 1 to study 111-222-789
- - Row 3: Assigned new instance 2 to study 111-222-789
+ - Row 2: Reused instance 1 for existing tube
+ - Row 3: Reused instance 2 for existing tube
 
 Errors / Warnings Referencefile:
 

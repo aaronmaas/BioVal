@@ -2,6 +2,7 @@ from config import REQUIRED_FIELDS, VALID_POS_PAXGENE, VALID_POS_FLUIDS, VALID_P
 from config import BIOFLUIDS, CELLS, DNA, PAXGENE, VALID_BOX, STUDY_ID_PATTERN, REDCAP_EVENT_NAME, REDCAP_REPEAT_INSTRUMENTS, VALID_TUBE_STATUS
 from utils import read_csv
 from utils import make_instance_key
+from utils import get_tube_key, build_instance_maps
 
 
 def check_structure(headers):
@@ -297,7 +298,7 @@ def validate_tube_instances(import_rows, reference_rows):
 
 
 
-def check_duplicate_positions(import_rows, occupied_positions, label="Import vs Reference"):
+def check_duplicate_positions_old(import_rows, occupied_positions, label="Import vs Reference"):
     """
     Core function from GUI. Compares import rows against existing positions and raises errors for conflicts.
 
@@ -326,8 +327,108 @@ def check_duplicate_positions(import_rows, occupied_positions, label="Import vs 
         print(f"No duplicate positions found between import and reference data.")
         return 0
 
+def check_duplicate_positions(import_rows, occupied_positions, reference_rows):
+    """
+    Allows duplicate positions IF the row refers to an existing tube (update case).
+    """
+
+    duplicate_count = 0
+
+    #  Build tube map to detect existing tubes
+    _, tube_map = build_instance_maps(reference_rows)
+
+    for i, row in enumerate(import_rows, start=2):
+
+        study_id = str(row.get("study_id", "")).strip()
+
+        # --- build tube key (same logic as before!) ---
+        tube_key = get_tube_key(row)
+
+        if not tube_key:
+            print(f"Row {i}: Cannot determine tube identity.")
+            duplicate_count += 1
+            continue
+
+        is_existing_tube = (study_id, tube_key) in tube_map
+
+        key = (
+            str(row.get("freezer", "")).strip(),
+            str(row.get("rack", "")).strip(),
+            str(row.get("box", "")).strip(),
+            str(row.get("tube_pos", "")).strip(),
+        )
+
+        #  MAIN LOGIC
+        if key in occupied_positions:
+
+            if is_existing_tube:
+                #  allowed → update of same tube
+                print(f"Row {i}: Position {key} already occupied (update allowed).")
+                continue
+
+            else:
+                #  real conflict → new tube trying to overwrite
+                print(f"Row {i}: Position {key} is already occupied.")
+                duplicate_count += 1
+
+    if duplicate_count == 0:
+        print("No invalid duplicate positions found.")
+    else:
+        print(f"{duplicate_count} duplicate position error(s) found.")
+
+    return duplicate_count
+
+def check_internal_duplicates(rows, file_label="File"):
+    """
+    Checks for duplicate positions within a file.
+    Allows duplicates if not both tubes are 'stored'.
+    """
+
+    seen = {}
+    duplicate_count = 0
+
+    for i, row in enumerate(rows, start=2):
+
+        key = (
+            str(row.get("freezer", "")).strip(),
+            str(row.get("rack", "")).strip(),
+            str(row.get("box", "")).strip(),
+            str(row.get("tube_pos", "")).strip(),
+        )
+
+        status = str(row.get("tube_status", "")).strip()
+
+        if not all(key):
+            continue
+
+        if key in seen:
+            prev_status, prev_row = seen[key]
+
+            #  CRITICAL LOGIC
+            if status == "1" and prev_status == "1":
+                print(
+                    f"{file_label} Row {i}: Position {key} duplicated "
+                    f"(both stored) also seen in row {prev_row}"
+                )
+                duplicate_count += 1
+            else:
+                #  allowed duplicate
+                print(
+                    f"{file_label} Row {i}: Position {key} reused "
+                    f"(status change or inactive tube)"
+                )
+
+        else:
+            seen[key] = (status, i)
+
+    if duplicate_count == 0:
+        print(f"No invalid internal duplicates in {file_label}.")
+    else:
+        print(f"{duplicate_count} duplicate error(s) in {file_label}.")
+
+    return #duplicate_count
     
-def check_internal_duplicates(rows, label):
+def check_internal_duplicates_old(rows, label):
     """
     Core function in GUI. Checks for duplicate positions within a single file.
 

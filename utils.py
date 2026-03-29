@@ -400,3 +400,18 @@ def assign_instances_old(import_rows, reference_rows):
             )
 
     return import_rows, messages
+
+def get_tube_key(row):
+    tube_id = str(row.get("tube_id", "")).strip()
+    if tube_id:
+        return tube_id
+
+    freezer = str(row.get("freezer", "")).strip()
+    rack = str(row.get("rack", "")).strip()
+    box = str(row.get("box", "")).strip()
+    pos = str(row.get("tube_pos", "")).strip()
+
+    if all([freezer, rack, box, pos]):
+        return (freezer, rack, box, pos)
+
+    return None
